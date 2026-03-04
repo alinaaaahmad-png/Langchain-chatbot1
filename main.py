@@ -1,6 +1,10 @@
-def main():
-    print("Hello from langchain-chatbot!")
+from langchain_ollama import ChatOllama
+
+llm = ChatOllama(
+    model="qwen2.5:1.5b",
+    temperature=0.7
+)
 
 
-if __name__ == "__main__":
-    main()
+response = llm.invoke("What is RAG")
+print(response.content)
